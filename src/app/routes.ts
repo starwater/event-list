@@ -1,10 +1,13 @@
 import {Routes} from '@angular/router';
-import {EventsListComponent} from './events-list/events-list.component';
-import {EventDetailsComponent} from './events-list/event-details/event-details.component';
-import {CreateEventComponent} from './events-list/create-event/create-event.component';
 import {Error404Component} from './errors/404component';
-import {EventRouteActivator} from './events-list/event-details/event-route-activator';
-import {EventListResolverService} from './events-list/event-list-resolver.service';
+
+import {
+  EventsListComponent,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivator,
+  EventListResolverService,
+} from './events-list/index';
 
 export const appRoutes: Routes = [
   {path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
@@ -15,3 +18,6 @@ export const appRoutes: Routes = [
   {path: 'user', loadChildren: './user/user.module#UserModule'}
   // , resolve: {events: EventListResolverService}
 ];
+
+
+
