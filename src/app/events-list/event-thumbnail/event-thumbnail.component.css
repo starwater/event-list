@@ -7,3 +7,6 @@
 .green{
  color: #003300 !important;
 }
+.thumbnail{
+  min-height: 230.5px;
+}
