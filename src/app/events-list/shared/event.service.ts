@@ -5,7 +5,7 @@ import {IEvent} from './event.model';
 
 @Injectable()
 export class EventService {
-   getEvents(): Observable<IEvent[]> {
+  getEvents(): Observable<IEvent[]> {
     const subject = new Subject<IEvent[]>();
     setTimeout(() => {
       subject.next(EVENTS);
@@ -18,9 +18,16 @@ export class EventService {
   getEvent(id: number) {
     return EVENTS.find(event => event.id === id);
   }
+
+  saveEvent(formValues: any) {
+    event.id = 999;
+    event.session = [];
+    EVENTS.push(event);
+  }
 }
 
 
+// @ts-ignore
 // @ts-ignore
 // @ts-ignore
 const EVENTS: IEvent[] = [
@@ -165,7 +172,7 @@ const EVENTS: IEvent[] = [
   {
     id: 3,
     name: 'ng-conf 2037',
-    date:new Date('5/4/2037'),
+    date: new Date('5/4/2037'),
     time: '9:00 am',
     price: 759.00,
     imageUrl: '/assets/images/ng-conf.png',
